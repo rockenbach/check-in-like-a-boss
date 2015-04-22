@@ -11,6 +11,12 @@ class WorkshopAdmin(admin.ModelAdmin):
 
 class ParticipantAdmin(admin.ModelAdmin):
 	form = ParticipantForm
+	list_filter = ('workshops__name',)
+	search_fields = ('name', )
+	actions = None
+
+
+#admin.site.disable_action('delete_selected')
 
 admin.site.register(Workshop, WorkshopAdmin)
 admin.site.register(Participant, ParticipantAdmin)
