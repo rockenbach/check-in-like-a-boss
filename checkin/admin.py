@@ -16,7 +16,5 @@ class ParticipantAdmin(admin.ModelAdmin):
 	actions = None
 
 
-#admin.site.disable_action('delete_selected')
-
 admin.site.register(Workshop, WorkshopAdmin)
 admin.site.register(Participant, ParticipantAdmin)

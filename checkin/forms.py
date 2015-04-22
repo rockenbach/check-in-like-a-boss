@@ -36,7 +36,7 @@ class ParticipantForm(forms.ModelForm):
 
 	def clean(self):
 		cleaned_data = super(ParticipantForm, self).clean()
-		selected_workshops = cleaned_data.get('workshops')
+		selected_workshops = cleaned_data.get('workshops', ())
 
 		for workshop in selected_workshops:
 			if workshop.participants.count() >= workshop.seats:

@@ -12,7 +12,7 @@ class Workshop(models.Model):
 class Participant(models.Model):
 	name = models.CharField(max_length=256, blank=False, null=False)
 	cpf = models.CharField(max_length=11, blank=False, help_text='Apenas números.')
-	workshops = models.ManyToManyField(Workshop, related_name='participants')
+	workshops = models.ManyToManyField(Workshop, blank=True, related_name='participants')
 
 	def __unicode__(self):
 		return u'%s' % self.name

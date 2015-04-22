@@ -29,6 +29,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='participant',
             name='workshops',
-            field=models.ManyToManyField(related_name='participants', to='checkin.Workshop'),
+            field=models.ManyToManyField(related_name='participants', to='checkin.Workshop', blank=True),
         ),
     ]
